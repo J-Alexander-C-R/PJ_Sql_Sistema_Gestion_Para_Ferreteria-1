@@ -7,7 +7,7 @@ namespace Capa_Datos
 {
     public class CD_Conexion
     {
-        private SqlConnection Conn = new SqlConnection("Server=.; Database=Sistema_De_Gestion_Para_Ferreterias; Integrated Security=true");
+        private SqlConnection Conn = new SqlConnection("Server=.; Database=Sistema_De_Gestion_Para_Ferreterias; Integrated Security=true; TrustServerCertificate=True");
 
         public SqlConnection AbrirConexion()
         {

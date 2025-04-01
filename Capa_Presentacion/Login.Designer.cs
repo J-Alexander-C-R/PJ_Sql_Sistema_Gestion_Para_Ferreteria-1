@@ -134,14 +134,14 @@
             btn_Login.FlatStyle = FlatStyle.Flat;
             btn_Login.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Login.ForeColor = Color.White;
-            btn_Login.Location = new Point(368, 368);
+            btn_Login.Location = new Point(368, 378);
             btn_Login.Margin = new Padding(4, 3, 4, 3);
             btn_Login.Name = "btn_Login";
             btn_Login.Size = new Size(164, 46);
-            btn_Login.TabIndex = 12;
+            btn_Login.TabIndex = 13;
             btn_Login.Text = "Login";
             btn_Login.UseVisualStyleBackColor = false;
-            btn_Login.Click += button2_Click;
+            btn_Login.Click += btn_Login_Click;
             // 
             // Login
             // 
