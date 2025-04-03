@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capa_Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Capa_Presentacion
 {
     public partial class Frm_Categoria : Form
     {
+        private CN_Categoria Logica_Categoria = new CN_Categoria();
         public Frm_Categoria()
         {
             InitializeComponent();
+            dgv_Categoria.DataSource = Logica_Categoria.MostrarDatos();
         }
     }
 }

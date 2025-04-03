@@ -1,16 +1,15 @@
-﻿using Capa_Datos;
-using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
+using Capa_Datos;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace Capa_Negocios
 {
-    public class CN_Producto
+    public class CN_Categoria
     {
         //TODO Se crea una instancia de la clase CD_Conexion para gestionar la conexión con la base de datos.
         private CD_Conexion conexion = new CD_Conexion();
@@ -24,7 +23,7 @@ namespace Capa_Negocios
             SqlConnection Conn = conexion.AbrirConexion();
 
             //TODO Se crea un comando SQL para seleccionar todos los registros de la tabla Cliente.
-            SqlCommand cmd = new SqlCommand("Select * From Producto", Conn);
+            SqlCommand cmd = new SqlCommand("Select * From Categoria_Producto", Conn);
 
             //TODO Se crea un adaptador de datos que ejecutará la consulta y llenará el DataTable.
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -40,18 +39,17 @@ namespace Capa_Negocios
 
         }
 
-        public void AgregarDatos(string producto, double precio, int stock, int idCategoria, int idProveedor)
+        public DataTable MostrarCategorias()
         {
-            SqlConnection Conn = conexion.AbrirConexion();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Producto (Nombre_Producto, Precio, Stock, Id_Proveedor, Id_Categoria) VALUES (@Nombre, @Precio, @Stock, @IdProveedor, @IdCategoria)", Conn);
-            cmd.Parameters.AddWithValue("@Nombre", producto);
-            cmd.Parameters.AddWithValue("@Precio", precio);
-            cmd.Parameters.AddWithValue("@Stock", stock);
-            cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
-            cmd.Parameters.AddWithValue("@IdCategoria", idCategoria);
+            SqlConnection conn = conexion.AbrirConexion();
+            DataTable tabla = new DataTable();
 
-            cmd.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand("SELECT Id_Categoria, Nombre_Categoria FROM Categoria_Producto", conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
             conexion.CerrarConexion();
+            return tabla;
         }
     }
 }

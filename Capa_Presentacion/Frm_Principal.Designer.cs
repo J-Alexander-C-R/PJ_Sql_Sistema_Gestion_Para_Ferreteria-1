@@ -39,6 +39,7 @@
             btn_Empleado = new Button();
             pictureBox9 = new PictureBox();
             panel3 = new Panel();
+            btn_Salir = new Button();
             pictureBox1 = new PictureBox();
             pictureBox8 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -49,7 +50,6 @@
             pictureBox5 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
-            btn_Salir = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel3.SuspendLayout();
@@ -84,10 +84,10 @@
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox5);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1260, 0);
+            panel1.Location = new Point(1190, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(220, 760);
+            panel1.Size = new Size(290, 760);
             panel1.TabIndex = 3;
             // 
             // btn_Consulta
@@ -95,7 +95,7 @@
             btn_Consulta.AutoSize = true;
             btn_Consulta.Font = new Font("Tahoma", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Consulta.ForeColor = Color.White;
-            btn_Consulta.Location = new Point(101, 565);
+            btn_Consulta.Location = new Point(111, 565);
             btn_Consulta.Margin = new Padding(4, 0, 4, 0);
             btn_Consulta.Name = "btn_Consulta";
             btn_Consulta.Size = new Size(87, 24);
@@ -110,13 +110,14 @@
             btn_Sistema.FlatStyle = FlatStyle.Flat;
             btn_Sistema.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Sistema.ForeColor = Color.White;
-            btn_Sistema.Location = new Point(82, 623);
+            btn_Sistema.Location = new Point(94, 625);
             btn_Sistema.Margin = new Padding(4, 2, 4, 2);
             btn_Sistema.Name = "btn_Sistema";
             btn_Sistema.Size = new Size(134, 36);
             btn_Sistema.TabIndex = 35;
             btn_Sistema.Text = "Sistema";
             btn_Sistema.UseVisualStyleBackColor = false;
+            btn_Sistema.Click += btn_Sistema_Click;
             // 
             // btn_Proveedor
             // 
@@ -125,7 +126,7 @@
             btn_Proveedor.FlatStyle = FlatStyle.Flat;
             btn_Proveedor.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Proveedor.ForeColor = Color.White;
-            btn_Proveedor.Location = new Point(94, 489);
+            btn_Proveedor.Location = new Point(102, 489);
             btn_Proveedor.Margin = new Padding(4, 2, 4, 2);
             btn_Proveedor.Name = "btn_Proveedor";
             btn_Proveedor.Size = new Size(127, 29);
@@ -141,7 +142,7 @@
             btn_Categoria.FlatStyle = FlatStyle.Flat;
             btn_Categoria.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Categoria.ForeColor = Color.White;
-            btn_Categoria.Location = new Point(94, 417);
+            btn_Categoria.Location = new Point(101, 417);
             btn_Categoria.Margin = new Padding(4, 2, 4, 2);
             btn_Categoria.Name = "btn_Categoria";
             btn_Categoria.Size = new Size(127, 29);
@@ -157,7 +158,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(94, 179);
+            button2.Location = new Point(102, 177);
             button2.Margin = new Padding(4, 2, 4, 2);
             button2.Name = "button2";
             button2.Size = new Size(134, 36);
@@ -173,7 +174,7 @@
             btn_Cliente.FlatStyle = FlatStyle.Flat;
             btn_Cliente.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Cliente.ForeColor = Color.White;
-            btn_Cliente.Location = new Point(94, 335);
+            btn_Cliente.Location = new Point(102, 335);
             btn_Cliente.Margin = new Padding(4, 2, 4, 2);
             btn_Cliente.Name = "btn_Cliente";
             btn_Cliente.Size = new Size(106, 32);
@@ -189,7 +190,7 @@
             btn_Empleado.FlatStyle = FlatStyle.Flat;
             btn_Empleado.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Empleado.ForeColor = Color.White;
-            btn_Empleado.Location = new Point(101, 263);
+            btn_Empleado.Location = new Point(111, 263);
             btn_Empleado.Margin = new Padding(4, 2, 4, 2);
             btn_Empleado.Name = "btn_Empleado";
             btn_Empleado.Size = new Size(127, 29);
@@ -218,6 +219,22 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(228, 56);
             panel3.TabIndex = 30;
+            // 
+            // btn_Salir
+            // 
+            btn_Salir.BackColor = Color.FromArgb(42, 28, 109);
+            btn_Salir.FlatAppearance.BorderSize = 0;
+            btn_Salir.FlatStyle = FlatStyle.Flat;
+            btn_Salir.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Salir.ForeColor = Color.White;
+            btn_Salir.Location = new Point(82, 8);
+            btn_Salir.Margin = new Padding(4, 2, 4, 2);
+            btn_Salir.Name = "btn_Salir";
+            btn_Salir.Size = new Size(134, 36);
+            btn_Salir.TabIndex = 36;
+            btn_Salir.Text = "X";
+            btn_Salir.UseVisualStyleBackColor = false;
+            btn_Salir.Click += btn_Salir_Click;
             // 
             // pictureBox1
             // 
@@ -315,7 +332,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(4, 2, 4, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1260, 150);
+            panel2.Size = new Size(1190, 150);
             panel2.TabIndex = 4;
             // 
             // label1
@@ -329,22 +346,6 @@
             label1.Size = new Size(750, 84);
             label1.TabIndex = 2;
             label1.Text = "Gestion de Ferreterias";
-            // 
-            // btn_Salir
-            // 
-            btn_Salir.BackColor = Color.FromArgb(42, 28, 109);
-            btn_Salir.FlatAppearance.BorderSize = 0;
-            btn_Salir.FlatStyle = FlatStyle.Flat;
-            btn_Salir.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Salir.ForeColor = Color.White;
-            btn_Salir.Location = new Point(82, 8);
-            btn_Salir.Margin = new Padding(4, 2, 4, 2);
-            btn_Salir.Name = "btn_Salir";
-            btn_Salir.Size = new Size(134, 36);
-            btn_Salir.TabIndex = 36;
-            btn_Salir.Text = "X";
-            btn_Salir.UseVisualStyleBackColor = false;
-            btn_Salir.Click += btn_Salir_Click;
             // 
             // Frm_Principal
             // 

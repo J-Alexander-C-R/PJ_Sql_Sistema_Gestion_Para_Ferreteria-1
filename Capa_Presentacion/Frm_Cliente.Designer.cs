@@ -39,25 +39,24 @@
             label13 = new Label();
             textBox1 = new TextBox();
             lbl_Usuario = new Label();
-            dataGridView1 = new DataGridView();
-            panel1 = new Panel();
-            pictureBox9 = new PictureBox();
-            panel2 = new Panel();
-            label1 = new Label();
+            dgv_Cliente = new DataGridView();
             label14 = new Label();
             button1 = new Button();
             btn_Eliminar_Producto = new Button();
             btn_Editar_Producto = new Button();
             btn_Agregar_Producto = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1 = new Panel();
+            btn_Volver = new Button();
+            panel2 = new Panel();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgv_Cliente).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(526, 361);
+            textBox6.Location = new Point(496, 349);
             textBox6.Margin = new Padding(4, 3, 4, 3);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(220, 36);
@@ -65,7 +64,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(136, 361);
+            textBox4.Location = new Point(106, 349);
             textBox4.Margin = new Padding(4, 3, 4, 3);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(220, 36);
@@ -75,7 +74,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label15.Location = new Point(136, 315);
+            label15.Location = new Point(106, 303);
             label15.Margin = new Padding(4, 0, 4, 0);
             label15.Name = "label15";
             label15.Size = new Size(74, 28);
@@ -86,7 +85,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(526, 315);
+            label4.Location = new Point(496, 303);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(114, 28);
@@ -95,7 +94,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(921, 256);
+            textBox3.Location = new Point(897, 244);
             textBox3.Margin = new Padding(4, 3, 4, 3);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(220, 36);
@@ -105,7 +104,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(921, 210);
+            label5.Location = new Point(897, 198);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(103, 28);
@@ -114,7 +113,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(526, 256);
+            textBox2.Location = new Point(496, 244);
             textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(220, 36);
@@ -124,7 +123,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label13.Location = new Point(526, 210);
+            label13.Location = new Point(496, 198);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(101, 28);
@@ -133,7 +132,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(136, 256);
+            textBox1.Location = new Point(106, 244);
             textBox1.Margin = new Padding(4, 3, 4, 3);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(220, 36);
@@ -143,66 +142,24 @@
             // 
             lbl_Usuario.AutoSize = true;
             lbl_Usuario.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbl_Usuario.Location = new Point(136, 210);
+            lbl_Usuario.Location = new Point(106, 198);
             lbl_Usuario.Margin = new Padding(4, 0, 4, 0);
             lbl_Usuario.Name = "lbl_Usuario";
             lbl_Usuario.Size = new Size(99, 28);
             lbl_Usuario.TabIndex = 51;
             lbl_Usuario.Text = "Nombre";
             // 
-            // dataGridView1
+            // dgv_Cliente
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(127, 523);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1022, 225);
-            dataGridView1.TabIndex = 67;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1260, 0);
-            panel1.Margin = new Padding(4, 2, 4, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(220, 760);
-            panel1.TabIndex = 68;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(45, 320);
-            pictureBox9.Margin = new Padding(4, 2, 4, 2);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(151, 103);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 49;
-            pictureBox9.TabStop = false;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(28, 200, 215);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(4, 2, 4, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1260, 150);
-            panel2.TabIndex = 69;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cambria", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(267, 27);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(750, 84);
-            label1.TabIndex = 2;
-            label1.Text = "Gestion de Ferreterias";
+            dgv_Cliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_Cliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgv_Cliente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgv_Cliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_Cliente.Location = new Point(97, 511);
+            dgv_Cliente.Name = "dgv_Cliente";
+            dgv_Cliente.RowHeadersWidth = 62;
+            dgv_Cliente.Size = new Size(1022, 225);
+            dgv_Cliente.TabIndex = 67;
             // 
             // label14
             // 
@@ -223,7 +180,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(453, 455);
+            button1.Location = new Point(423, 443);
             button1.Margin = new Padding(4, 2, 4, 2);
             button1.Name = "button1";
             button1.Size = new Size(164, 41);
@@ -238,7 +195,7 @@
             btn_Eliminar_Producto.FlatStyle = FlatStyle.Flat;
             btn_Eliminar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Eliminar_Producto.ForeColor = Color.White;
-            btn_Eliminar_Producto.Location = new Point(899, 455);
+            btn_Eliminar_Producto.Location = new Point(875, 443);
             btn_Eliminar_Producto.Margin = new Padding(4, 2, 4, 2);
             btn_Eliminar_Producto.Name = "btn_Eliminar_Producto";
             btn_Eliminar_Producto.Size = new Size(164, 41);
@@ -253,7 +210,7 @@
             btn_Editar_Producto.FlatStyle = FlatStyle.Flat;
             btn_Editar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Editar_Producto.ForeColor = Color.White;
-            btn_Editar_Producto.Location = new Point(673, 455);
+            btn_Editar_Producto.Location = new Point(643, 443);
             btn_Editar_Producto.Margin = new Padding(4, 2, 4, 2);
             btn_Editar_Producto.Name = "btn_Editar_Producto";
             btn_Editar_Producto.Size = new Size(164, 41);
@@ -268,7 +225,7 @@
             btn_Agregar_Producto.FlatStyle = FlatStyle.Flat;
             btn_Agregar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Agregar_Producto.ForeColor = Color.White;
-            btn_Agregar_Producto.Location = new Point(228, 455);
+            btn_Agregar_Producto.Location = new Point(198, 443);
             btn_Agregar_Producto.Margin = new Padding(4, 2, 4, 2);
             btn_Agregar_Producto.Name = "btn_Agregar_Producto";
             btn_Agregar_Producto.Size = new Size(164, 41);
@@ -276,20 +233,69 @@
             btn_Agregar_Producto.Text = "Agregar";
             btn_Agregar_Producto.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(42, 28, 109);
+            panel1.Controls.Add(btn_Volver);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(1226, 0);
+            panel1.Margin = new Padding(4, 2, 4, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(254, 760);
+            panel1.TabIndex = 75;
+            // 
+            // btn_Volver
+            // 
+            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
+            btn_Volver.FlatAppearance.BorderSize = 0;
+            btn_Volver.FlatStyle = FlatStyle.Flat;
+            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Volver.ForeColor = Color.White;
+            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
+            btn_Volver.Location = new Point(33, 316);
+            btn_Volver.Margin = new Padding(4, 2, 4, 2);
+            btn_Volver.Name = "btn_Volver";
+            btn_Volver.Size = new Size(167, 103);
+            btn_Volver.TabIndex = 77;
+            btn_Volver.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(28, 200, 215);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(4, 2, 4, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1226, 150);
+            panel2.TabIndex = 76;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(267, 27);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(750, 84);
+            label1.TabIndex = 2;
+            label1.Text = "Gestion de Ferreterias";
+            // 
             // Frm_Cliente
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(btn_Eliminar_Producto);
             Controls.Add(btn_Editar_Producto);
             Controls.Add(btn_Agregar_Producto);
             Controls.Add(label14);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgv_Cliente);
             Controls.Add(textBox6);
             Controls.Add(textBox4);
             Controls.Add(label15);
@@ -307,9 +313,8 @@
             MinimizeBox = false;
             Name = "Frm_Cliente";
             Text = "Frm_Cliente";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_Cliente).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -327,15 +332,15 @@
         private Label label13;
         private TextBox textBox1;
         private Label lbl_Usuario;
-        private DataGridView dataGridView1;
-        private Panel panel1;
-        private PictureBox pictureBox9;
-        private Panel panel2;
-        private Label label1;
+        private DataGridView dgv_Cliente;
         private Label label14;
         private Button button1;
         private Button btn_Eliminar_Producto;
         private Button btn_Editar_Producto;
         private Button btn_Agregar_Producto;
+        private Panel panel1;
+        private Panel panel2;
+        private Label label1;
+        private Button btn_Volver;
     }
 }

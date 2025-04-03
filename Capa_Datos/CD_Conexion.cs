@@ -12,7 +12,7 @@ namespace Capa_Datos
         public SqlConnection AbrirConexion()
         {
             if (Conn.State == ConnectionState.Closed)
-                Conn.Open();
+                Conn.Open();  
             return Conn;
         }
 

@@ -30,35 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Consulta));
             panel1 = new Panel();
-            pictureBox9 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
+            btn_Volver = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(btn_Volver);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1260, 0);
+            panel1.Location = new Point(1203, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(220, 760);
+            panel1.Size = new Size(277, 760);
             panel1.TabIndex = 70;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(45, 320);
-            pictureBox9.Margin = new Padding(4, 2, 4, 2);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(151, 103);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 49;
-            pictureBox9.TabStop = false;
             // 
             // panel2
             // 
@@ -68,7 +56,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(4, 2, 4, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1260, 150);
+            panel2.Size = new Size(1203, 150);
             panel2.TabIndex = 71;
             // 
             // label1
@@ -82,6 +70,21 @@
             label1.Size = new Size(750, 84);
             label1.TabIndex = 2;
             label1.Text = "Gestion de Ferreterias";
+            // 
+            // btn_Volver
+            // 
+            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
+            btn_Volver.FlatAppearance.BorderSize = 0;
+            btn_Volver.FlatStyle = FlatStyle.Flat;
+            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Volver.ForeColor = Color.White;
+            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
+            btn_Volver.Location = new Point(51, 273);
+            btn_Volver.Margin = new Padding(4, 2, 4, 2);
+            btn_Volver.Name = "btn_Volver";
+            btn_Volver.Size = new Size(167, 103);
+            btn_Volver.TabIndex = 72;
+            btn_Volver.UseVisualStyleBackColor = false;
             // 
             // Frm_Consulta
             // 
@@ -100,7 +103,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Frm_Consulta";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -109,8 +111,8 @@
         #endregion
 
         private Panel panel1;
-        private PictureBox pictureBox9;
         private Panel panel2;
         private Label label1;
+        private Button btn_Volver;
     }
 }
