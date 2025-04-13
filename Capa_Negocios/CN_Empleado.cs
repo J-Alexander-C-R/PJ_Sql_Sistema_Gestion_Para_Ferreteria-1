@@ -1,42 +1,102 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using Capa_Datos;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Capa_Negocios
 {
-    public class CN_Empleado
+    public class CN_Empleado : CN_Base
     {
-        //TODO Se crea una instancia de la clase CD_Conexion para gestionar la conexión con la base de datos.
-        private CD_Conexion conexion = new CD_Conexion();
-
+        //TODO: Metodo para mostrar datos en el datagridview
         public DataTable MostrarDatos()
         {
-            //TODO Se crea un objeto DataTable para almacenar los datos recuperados de la base de datos.
             DataTable tabla = new DataTable();
-
-            //TODO Se abre la conexión a la base de datos.
             SqlConnection Conn = conexion.AbrirConexion();
-
-            //TODO Se crea un comando SQL para seleccionar todos los registros de la tabla Cliente.
-            SqlCommand cmd = new SqlCommand("Select * From Empleado", Conn);
-
-            //TODO Se crea un adaptador de datos que ejecutará la consulta y llenará el DataTable.
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Empleado", Conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            //TODO Se ejecuta la consulta y los resultados se almacenan en el DataTable.
             da.Fill(tabla);
-
-            //TODO Se cierra la conexión con la base de datos (puede ser innecesario ya que SqlDataAdapter maneja la conexión).
             conexion.CerrarConexion();
-
-            //TODO Se retorna el DataTable con los datos obtenidos.
             return tabla;
+        }
 
+        //TODO: Metodo para agregar datos
+        public void AgregarDatos(string nombre, string apellido, int telefono, int cedula, string direccion, string email, string cargo)
+        {
+            SqlConnection Conn = AbrirConexion();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Empleado (Nombre, Apellido, Telefono, Cedula, Direccion, Email, Cargo) VALUES (@Nombre, @Apellido, @Telefono, @Cedula, @Direccion, @Email, @Cargo)", Conn);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Apellido", apellido);
+            cmd.Parameters.AddWithValue("@Telefono", telefono);
+            cmd.Parameters.AddWithValue("@Cedula", cedula);
+            cmd.Parameters.AddWithValue("@Direccion", direccion);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Cargo", cargo);
+            cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+        //Metodo para eliminar datos
+        public void EliminarDatos(int idEmpleado)
+        {
+            SqlConnection Conn = AbrirConexion();
+            SqlCommand Cmd = new SqlCommand("DELETE FROM Empleado WHERE IdEmpleado = @IDEmpleado", Conn);
+            Cmd.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+            Cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+        //Metodo para editar datos
+        public void EditarDatos(int idEmpleado, string nombre, string apellido, long telefono, long cedula, string direccion, string email, string cargo)
+        {
+            SqlConnection Conn = AbrirConexion();
+            SqlCommand Cmd = new SqlCommand(
+                "UPDATE Empleado SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Cedula = @Cedula, Direccion = @Direccion, Email = @Email, Cargo = @Cargo WHERE IdEmpleado = @IdEmpleado",
+                Conn
+            );
+            Cmd.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+            Cmd.Parameters.AddWithValue("@Nombre", nombre);
+            Cmd.Parameters.AddWithValue("@Apellido", apellido);
+            Cmd.Parameters.AddWithValue("@Telefono", telefono);
+            Cmd.Parameters.AddWithValue("@Cedula", cedula);
+            Cmd.Parameters.AddWithValue("@Direccion", direccion);
+            Cmd.Parameters.AddWithValue("@Email", email);
+            Cmd.Parameters.AddWithValue("@Cargo", cargo);
+            Cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+        public DataTable ObtenerEmails()
+        {
+            //TODO: Abrir conexión
+            SqlConnection Conn = AbrirConexion();
+            //TODO: Crear comando SQL para seleccionar los correos
+            SqlCommand cmd = new SqlCommand("SELECT Email FROM Empleado", Conn);
+            //TODO: Crear adaptador y DataTable para llenar los datos
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            //TODO: Llenar la tabla
+            da.Fill(tabla);
+            //TODO: Cerrar conexión
+            CerrarConexion();
+            //TODO: Retornar la tabla con los correos
+            return tabla;
+        }
+
+        public DataTable ObtenerCedulas()
+        {
+            //TODO: Abrir conexión
+            SqlConnection Conn = AbrirConexion();
+            //TODO: Crear comando SQL para seleccionar los correos
+            SqlCommand cmd = new SqlCommand("SELECT Cedula FROM Empleado", Conn);
+            //TODO: Crear adaptador y DataTable para llenar los datos
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            //TODO: Llenar la tabla
+            da.Fill(tabla);
+            //TODO: Cerrar conexión
+            CerrarConexion();
+            //TODO: Retornar la tabla con los correos
+            return tabla;
         }
     }
 }

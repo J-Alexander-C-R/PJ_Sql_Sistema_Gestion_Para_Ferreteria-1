@@ -1,42 +1,90 @@
 ﻿using System;
 using Capa_Datos;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 
 namespace Capa_Negocios
 {
-    public class CN_Cliente
+    public class CN_Cliente : CN_Base
     {
-        //TODO Se crea una instancia de la clase CD_Conexion para gestionar la conexión con la base de datos.
-        private CD_Conexion conexion = new CD_Conexion();
-
+        //TODO: Metodo para mostrar datos
         public DataTable MostrarDatos()
         {
-            //TODO Se crea un objeto DataTable para almacenar los datos recuperados de la base de datos.
             DataTable tabla = new DataTable();
-
-            //TODO Se abre la conexión a la base de datos.
             SqlConnection Conn = conexion.AbrirConexion();
-
-            //TODO Se crea un comando SQL para seleccionar todos los registros de la tabla Cliente.
-            SqlCommand cmd = new SqlCommand("Select * From Cliente", Conn);
-
-            //TODO Se crea un adaptador de datos que ejecutará la consulta y llenará el DataTable.
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Cliente", Conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            //TODO Se ejecuta la consulta y los resultados se almacenan en el DataTable.
             da.Fill(tabla);
-
-            //TODO Se cierra la conexión con la base de datos (puede ser innecesario ya que SqlDataAdapter maneja la conexión).
             conexion.CerrarConexion();
-
-            //TODO Se retorna el DataTable con los datos obtenidos.
             return tabla;
+        }
 
+        //TODO: Metodo para agregar datos
+        public void AgregarDatos(string nombre, string apellido, long telefono, string email, string direccion)
+        {
+            SqlConnection Conn = AbrirConexion();
+            SqlCommand Cmd = new SqlCommand("INSERT INTO Cliente (Nombre, Apellido, Telefono, Email, Direccion) VALUES (@Nombre, @Apellido, @Telefono, @Email, @Direccion)", Conn);
+            Cmd.Parameters.AddWithValue("@Nombre", nombre);
+            Cmd.Parameters.AddWithValue("@Apellido", apellido);
+            Cmd.Parameters.AddWithValue("@Telefono", telefono);
+            Cmd.Parameters.AddWithValue("@Email", email);
+            Cmd.Parameters.AddWithValue("@Direccion", direccion);
+            Cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+
+        //TODO: Metodo para eliminar datos
+        public void EliminarDatos(int idCliente)
+        {
+            SqlConnection Conn = AbrirConexion();
+            SqlCommand Cmd = new SqlCommand("DELETE FROM Cliente WHERE IdCliente = @IDCliente", Conn);
+            Cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+            Cmd.ExecuteNonQuery();
+            CerrarConexion();
+        }
+
+        public void EditarDatos(int idCliente, string nombre, string apellido, long telefono, string email, string direccion)
+        {
+            //TODO: Abrir conexión a la base de datos
+            SqlConnection Conn = AbrirConexion();
+
+            //TODO: Crear el comando SQL con los parámetros
+            SqlCommand Cmd = new SqlCommand(
+                "UPDATE Cliente SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Email = @Email, Direccion = @Direccion WHERE IdCliente = @IdCliente",
+                Conn
+            );
+
+            //TODO: Asignar valores a los parámetros
+            Cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+            Cmd.Parameters.AddWithValue("@Nombre", nombre);
+            Cmd.Parameters.AddWithValue("@Apellido", apellido);
+            Cmd.Parameters.AddWithValue("@Telefono", telefono);
+            Cmd.Parameters.AddWithValue("@Email", email);
+            Cmd.Parameters.AddWithValue("@Direccion", direccion);
+
+            //TODO: Ejecutar comando
+            Cmd.ExecuteNonQuery();
+
+            //TODO: Cerrar conexión
+            CerrarConexion();
+        }
+
+        public DataTable ObtenerCorreos()
+        {
+            //TODO: Abrir conexión
+            SqlConnection Conn = AbrirConexion();
+            //TODO: Crear comando SQL para seleccionar los correos
+            SqlCommand cmd = new SqlCommand("SELECT Email FROM Cliente", Conn);
+            //TODO: Crear adaptador y DataTable para llenar los datos
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            //TODO: Llenar la tabla
+            da.Fill(tabla);
+            //TODO: Cerrar conexión
+            CerrarConexion();
+            //TODO: Retornar la tabla con los correos
+            return tabla;
         }
     }
 }

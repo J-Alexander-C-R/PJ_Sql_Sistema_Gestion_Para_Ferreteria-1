@@ -33,29 +33,31 @@
             cmb_Categoria = new ComboBox();
             label4 = new Label();
             label3 = new Label();
-            txt_Stock = new TextBox();
             label5 = new Label();
-            txt_Precio = new TextBox();
             label13 = new Label();
-            txt_Producto = new TextBox();
-            lbl_Usuario = new Label();
+            lbl_Producto = new Label();
             btn_Eliminar_Producto = new Button();
             btn_Editar = new Button();
             btn_Agregar = new Button();
             dgv_Producto = new DataGridView();
-            btn_Eliminar = new Button();
+            btn_Cancelar = new Button();
             panel1 = new Panel();
-            btn_Volver = new Button();
             panel2 = new Panel();
             label1 = new Label();
             label14 = new Label();
+            txt_Producto = new TextBox();
+            txt_Precio = new TextBox();
+            txt_Stock = new TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgv_Producto).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // cmb_Proveedor
             // 
+            cmb_Proveedor.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_Proveedor.FormattingEnabled = true;
             cmb_Proveedor.Location = new Point(487, 355);
             cmb_Proveedor.Margin = new Padding(4, 2, 4, 2);
@@ -65,6 +67,7 @@
             // 
             // cmb_Categoria
             // 
+            cmb_Categoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_Categoria.FormattingEnabled = true;
             cmb_Categoria.Location = new Point(97, 355);
             cmb_Categoria.Margin = new Padding(4, 2, 4, 2);
@@ -94,14 +97,6 @@
             label3.TabIndex = 23;
             label3.Text = "Categoria";
             // 
-            // txt_Stock
-            // 
-            txt_Stock.Location = new Point(882, 251);
-            txt_Stock.Margin = new Padding(4, 2, 4, 2);
-            txt_Stock.Name = "txt_Stock";
-            txt_Stock.Size = new Size(220, 36);
-            txt_Stock.TabIndex = 22;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -112,14 +107,6 @@
             label5.Size = new Size(70, 28);
             label5.TabIndex = 21;
             label5.Text = "Stock";
-            // 
-            // txt_Precio
-            // 
-            txt_Precio.Location = new Point(487, 251);
-            txt_Precio.Margin = new Padding(4, 2, 4, 2);
-            txt_Precio.Name = "txt_Precio";
-            txt_Precio.Size = new Size(220, 36);
-            txt_Precio.TabIndex = 20;
             // 
             // label13
             // 
@@ -132,24 +119,16 @@
             label13.TabIndex = 19;
             label13.Text = "Precio";
             // 
-            // txt_Producto
+            // lbl_Producto
             // 
-            txt_Producto.Location = new Point(97, 251);
-            txt_Producto.Margin = new Padding(4, 2, 4, 2);
-            txt_Producto.Name = "txt_Producto";
-            txt_Producto.Size = new Size(220, 36);
-            txt_Producto.TabIndex = 18;
-            // 
-            // lbl_Usuario
-            // 
-            lbl_Usuario.AutoSize = true;
-            lbl_Usuario.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbl_Usuario.Location = new Point(97, 205);
-            lbl_Usuario.Margin = new Padding(4, 0, 4, 0);
-            lbl_Usuario.Name = "lbl_Usuario";
-            lbl_Usuario.Size = new Size(111, 28);
-            lbl_Usuario.TabIndex = 17;
-            lbl_Usuario.Text = "Producto";
+            lbl_Producto.AutoSize = true;
+            lbl_Producto.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbl_Producto.Location = new Point(97, 205);
+            lbl_Producto.Margin = new Padding(4, 0, 4, 0);
+            lbl_Producto.Name = "lbl_Producto";
+            lbl_Producto.Size = new Size(111, 28);
+            lbl_Producto.TabIndex = 17;
+            lbl_Producto.Text = "Producto";
             // 
             // btn_Eliminar_Producto
             // 
@@ -165,6 +144,7 @@
             btn_Eliminar_Producto.TabIndex = 29;
             btn_Eliminar_Producto.Text = "Eliminar";
             btn_Eliminar_Producto.UseVisualStyleBackColor = false;
+            btn_Eliminar_Producto.Click += btn_Eliminar_Producto_Click;
             // 
             // btn_Editar
             // 
@@ -180,6 +160,7 @@
             btn_Editar.TabIndex = 28;
             btn_Editar.Text = "Editar";
             btn_Editar.UseVisualStyleBackColor = false;
+            btn_Editar.Click += btn_Editar_Click;
             // 
             // btn_Agregar
             // 
@@ -210,47 +191,32 @@
             dgv_Producto.TabIndex = 30;
             dgv_Producto.CellContentClick += dgv_Producto_CellContentClick;
             // 
-            // btn_Eliminar
+            // btn_Cancelar
             // 
-            btn_Eliminar.BackColor = Color.FromArgb(198, 65, 66);
-            btn_Eliminar.FlatAppearance.BorderSize = 0;
-            btn_Eliminar.FlatStyle = FlatStyle.Flat;
-            btn_Eliminar.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Eliminar.ForeColor = Color.White;
-            btn_Eliminar.Location = new Point(436, 436);
-            btn_Eliminar.Margin = new Padding(4, 2, 4, 2);
-            btn_Eliminar.Name = "btn_Eliminar";
-            btn_Eliminar.Size = new Size(164, 41);
-            btn_Eliminar.TabIndex = 32;
-            btn_Eliminar.Text = "Cancelar";
-            btn_Eliminar.UseVisualStyleBackColor = false;
+            btn_Cancelar.BackColor = Color.FromArgb(198, 65, 66);
+            btn_Cancelar.FlatAppearance.BorderSize = 0;
+            btn_Cancelar.FlatStyle = FlatStyle.Flat;
+            btn_Cancelar.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cancelar.ForeColor = Color.White;
+            btn_Cancelar.Location = new Point(436, 436);
+            btn_Cancelar.Margin = new Padding(4, 2, 4, 2);
+            btn_Cancelar.Name = "btn_Cancelar";
+            btn_Cancelar.Size = new Size(164, 41);
+            btn_Cancelar.TabIndex = 32;
+            btn_Cancelar.Text = "Cancelar";
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += btn_Cancelar_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(btn_Volver);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1226, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(254, 760);
             panel1.TabIndex = 48;
-            // 
-            // btn_Volver
-            // 
-            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
-            btn_Volver.FlatAppearance.BorderSize = 0;
-            btn_Volver.FlatStyle = FlatStyle.Flat;
-            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Volver.ForeColor = Color.White;
-            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
-            btn_Volver.Location = new Point(46, 310);
-            btn_Volver.Margin = new Padding(4, 2, 4, 2);
-            btn_Volver.Name = "btn_Volver";
-            btn_Volver.Size = new Size(183, 122);
-            btn_Volver.TabIndex = 59;
-            btn_Volver.UseVisualStyleBackColor = false;
-            btn_Volver.Click += btn_Volver_Click;
             // 
             // panel2
             // 
@@ -287,16 +253,54 @@
             label14.TabIndex = 58;
             label14.Text = "Productos";
             // 
+            // txt_Producto
+            // 
+            txt_Producto.Location = new Point(97, 251);
+            txt_Producto.Margin = new Padding(4, 2, 4, 2);
+            txt_Producto.Name = "txt_Producto";
+            txt_Producto.Size = new Size(220, 36);
+            txt_Producto.TabIndex = 59;
+            // 
+            // txt_Precio
+            // 
+            txt_Precio.Location = new Point(487, 251);
+            txt_Precio.Name = "txt_Precio";
+            txt_Precio.Size = new Size(220, 36);
+            txt_Precio.TabIndex = 75;
+            // 
+            // txt_Stock
+            // 
+            txt_Stock.Location = new Point(882, 251);
+            txt_Stock.Name = "txt_Stock";
+            txt_Stock.Size = new Size(220, 36);
+            txt_Stock.TabIndex = 76;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(36, 310);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 77;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            // 
             // Frm_Producto
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
+            ControlBox = false;
+            Controls.Add(txt_Stock);
+            Controls.Add(txt_Precio);
+            Controls.Add(txt_Producto);
             Controls.Add(label14);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(btn_Eliminar);
+            Controls.Add(btn_Cancelar);
             Controls.Add(dgv_Producto);
             Controls.Add(btn_Eliminar_Producto);
             Controls.Add(btn_Editar);
@@ -305,12 +309,9 @@
             Controls.Add(cmb_Categoria);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(txt_Stock);
             Controls.Add(label5);
-            Controls.Add(txt_Precio);
             Controls.Add(label13);
-            Controls.Add(txt_Producto);
-            Controls.Add(lbl_Usuario);
+            Controls.Add(lbl_Producto);
             Font = new Font("Cambria", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4, 2, 4, 2);
@@ -318,12 +319,12 @@
             MinimizeBox = false;
             Name = "Frm_Producto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Frm_Producto";
             Load += Frm_Producto_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Producto).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,21 +334,21 @@
         private ComboBox cmb_Categoria;
         private Label label4;
         private Label label3;
-        private TextBox txt_Stock;
         private Label label5;
-        private TextBox txt_Precio;
         private Label label13;
-        private TextBox txt_Producto;
-        private Label lbl_Usuario;
+        private Label lbl_Producto;
         private Button btn_Eliminar_Producto;
         private Button btn_Editar;
         private Button btn_Agregar;
         private DataGridView dgv_Producto;
-        private Button btn_Eliminar;
+        private Button btn_Cancelar;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
         private Label label14;
-        private Button btn_Volver;
+        private TextBox txt_Producto;
+        private TextBox txt_Precio;
+        private TextBox txt_Stock;
+        private PictureBox pictureBox1;
     }
 }

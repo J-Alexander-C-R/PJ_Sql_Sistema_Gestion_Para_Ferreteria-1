@@ -50,6 +50,7 @@
             pictureBox5 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
+            pictureBox10 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel3.SuspendLayout();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -93,12 +95,12 @@
             // btn_Consulta
             // 
             btn_Consulta.AutoSize = true;
-            btn_Consulta.Font = new Font("Tahoma", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Consulta.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Consulta.ForeColor = Color.White;
             btn_Consulta.Location = new Point(111, 565);
             btn_Consulta.Margin = new Padding(4, 0, 4, 0);
             btn_Consulta.Name = "btn_Consulta";
-            btn_Consulta.Size = new Size(87, 24);
+            btn_Consulta.Size = new Size(100, 26);
             btn_Consulta.TabIndex = 46;
             btn_Consulta.Text = "Consulta";
             btn_Consulta.Click += btn_Consulta_Click;
@@ -108,7 +110,7 @@
             btn_Sistema.BackColor = Color.FromArgb(42, 28, 109);
             btn_Sistema.FlatAppearance.BorderSize = 0;
             btn_Sistema.FlatStyle = FlatStyle.Flat;
-            btn_Sistema.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Sistema.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Sistema.ForeColor = Color.White;
             btn_Sistema.Location = new Point(94, 625);
             btn_Sistema.Margin = new Padding(4, 2, 4, 2);
@@ -124,7 +126,7 @@
             btn_Proveedor.BackColor = Color.FromArgb(42, 28, 109);
             btn_Proveedor.FlatAppearance.BorderSize = 0;
             btn_Proveedor.FlatStyle = FlatStyle.Flat;
-            btn_Proveedor.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Proveedor.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Proveedor.ForeColor = Color.White;
             btn_Proveedor.Location = new Point(102, 489);
             btn_Proveedor.Margin = new Padding(4, 2, 4, 2);
@@ -140,7 +142,7 @@
             btn_Categoria.BackColor = Color.FromArgb(42, 28, 109);
             btn_Categoria.FlatAppearance.BorderSize = 0;
             btn_Categoria.FlatStyle = FlatStyle.Flat;
-            btn_Categoria.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Categoria.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Categoria.ForeColor = Color.White;
             btn_Categoria.Location = new Point(101, 417);
             btn_Categoria.Margin = new Padding(4, 2, 4, 2);
@@ -156,7 +158,7 @@
             button2.BackColor = Color.FromArgb(42, 28, 109);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(102, 177);
             button2.Margin = new Padding(4, 2, 4, 2);
@@ -172,7 +174,7 @@
             btn_Cliente.BackColor = Color.FromArgb(42, 28, 109);
             btn_Cliente.FlatAppearance.BorderSize = 0;
             btn_Cliente.FlatStyle = FlatStyle.Flat;
-            btn_Cliente.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cliente.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Cliente.ForeColor = Color.White;
             btn_Cliente.Location = new Point(102, 335);
             btn_Cliente.Margin = new Padding(4, 2, 4, 2);
@@ -188,7 +190,7 @@
             btn_Empleado.BackColor = Color.FromArgb(42, 28, 109);
             btn_Empleado.FlatAppearance.BorderSize = 0;
             btn_Empleado.FlatStyle = FlatStyle.Flat;
-            btn_Empleado.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Empleado.Font = new Font("Cambria", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btn_Empleado.ForeColor = Color.White;
             btn_Empleado.Location = new Point(111, 263);
             btn_Empleado.Margin = new Padding(4, 2, 4, 2);
@@ -347,12 +349,22 @@
             label1.TabIndex = 2;
             label1.Text = "Gestion de Ferreterias";
             // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(216, 203);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(760, 505);
+            pictureBox10.TabIndex = 5;
+            pictureBox10.TabStop = false;
+            // 
             // Frm_Principal
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
+            Controls.Add(pictureBox10);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Cambria", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -376,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
 
@@ -402,5 +415,6 @@
         private Button btn_Sistema;
         private Label btn_Consulta;
         private Button btn_Salir;
+        private PictureBox pictureBox10;
     }
 }

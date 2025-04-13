@@ -29,31 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categoria));
-            comboBox2 = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             dgv_Categoria = new DataGridView();
-            button1 = new Button();
+            btn_Cancelar = new Button();
             btn_Eliminar_Producto = new Button();
             btn_Editar_Producto = new Button();
-            btn_Agregar_Producto = new Button();
+            btn_Agregar_Categoria = new Button();
             panel1 = new Panel();
-            btn_Volver = new Button();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
+            txt_Categoria = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgv_Categoria).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(508, 280);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(220, 36);
-            comboBox2.TabIndex = 33;
             // 
             // label4
             // 
@@ -94,21 +87,23 @@
             dgv_Categoria.RowHeadersWidth = 62;
             dgv_Categoria.Size = new Size(766, 189);
             dgv_Categoria.TabIndex = 39;
+            dgv_Categoria.CellContentClick += dgv_Categoria_CellContentClick;
             // 
-            // button1
+            // btn_Cancelar
             // 
-            button1.BackColor = Color.FromArgb(198, 65, 66);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(442, 371);
-            button1.Margin = new Padding(4, 2, 4, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(164, 41);
-            button1.TabIndex = 56;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
+            btn_Cancelar.BackColor = Color.FromArgb(198, 65, 66);
+            btn_Cancelar.FlatAppearance.BorderSize = 0;
+            btn_Cancelar.FlatStyle = FlatStyle.Flat;
+            btn_Cancelar.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cancelar.ForeColor = Color.White;
+            btn_Cancelar.Location = new Point(442, 371);
+            btn_Cancelar.Margin = new Padding(4, 2, 4, 2);
+            btn_Cancelar.Name = "btn_Cancelar";
+            btn_Cancelar.Size = new Size(164, 41);
+            btn_Cancelar.TabIndex = 56;
+            btn_Cancelar.Text = "Cancelar";
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += btn_Cancelar_Click;
             // 
             // btn_Eliminar_Producto
             // 
@@ -124,6 +119,7 @@
             btn_Eliminar_Producto.TabIndex = 55;
             btn_Eliminar_Producto.Text = "Eliminar";
             btn_Eliminar_Producto.UseVisualStyleBackColor = false;
+            btn_Eliminar_Producto.Click += btn_Eliminar_Producto_Click;
             // 
             // btn_Editar_Producto
             // 
@@ -139,26 +135,28 @@
             btn_Editar_Producto.TabIndex = 54;
             btn_Editar_Producto.Text = "Editar";
             btn_Editar_Producto.UseVisualStyleBackColor = false;
+            btn_Editar_Producto.Click += btn_Editar_Producto_Click;
             // 
-            // btn_Agregar_Producto
+            // btn_Agregar_Categoria
             // 
-            btn_Agregar_Producto.BackColor = Color.FromArgb(19, 26, 97);
-            btn_Agregar_Producto.FlatAppearance.BorderSize = 0;
-            btn_Agregar_Producto.FlatStyle = FlatStyle.Flat;
-            btn_Agregar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Agregar_Producto.ForeColor = Color.White;
-            btn_Agregar_Producto.Location = new Point(217, 371);
-            btn_Agregar_Producto.Margin = new Padding(4, 2, 4, 2);
-            btn_Agregar_Producto.Name = "btn_Agregar_Producto";
-            btn_Agregar_Producto.Size = new Size(164, 41);
-            btn_Agregar_Producto.TabIndex = 53;
-            btn_Agregar_Producto.Text = "Agregar";
-            btn_Agregar_Producto.UseVisualStyleBackColor = false;
+            btn_Agregar_Categoria.BackColor = Color.FromArgb(19, 26, 97);
+            btn_Agregar_Categoria.FlatAppearance.BorderSize = 0;
+            btn_Agregar_Categoria.FlatStyle = FlatStyle.Flat;
+            btn_Agregar_Categoria.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Agregar_Categoria.ForeColor = Color.White;
+            btn_Agregar_Categoria.Location = new Point(217, 371);
+            btn_Agregar_Categoria.Margin = new Padding(4, 2, 4, 2);
+            btn_Agregar_Categoria.Name = "btn_Agregar_Categoria";
+            btn_Agregar_Categoria.Size = new Size(164, 41);
+            btn_Agregar_Categoria.TabIndex = 53;
+            btn_Agregar_Categoria.Text = "Agregar";
+            btn_Agregar_Categoria.UseVisualStyleBackColor = false;
+            btn_Agregar_Categoria.Click += btn_Agregar_Categoria_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(btn_Volver);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1226, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
@@ -166,20 +164,16 @@
             panel1.Size = new Size(254, 760);
             panel1.TabIndex = 71;
             // 
-            // btn_Volver
+            // pictureBox1
             // 
-            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
-            btn_Volver.FlatAppearance.BorderSize = 0;
-            btn_Volver.FlatStyle = FlatStyle.Flat;
-            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Volver.ForeColor = Color.White;
-            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
-            btn_Volver.Location = new Point(41, 309);
-            btn_Volver.Margin = new Padding(4, 2, 4, 2);
-            btn_Volver.Name = "btn_Volver";
-            btn_Volver.Size = new Size(167, 103);
-            btn_Volver.TabIndex = 73;
-            btn_Volver.UseVisualStyleBackColor = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(42, 280);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 73;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -204,21 +198,29 @@
             label1.TabIndex = 2;
             label1.Text = "Gestion de Ferreterias";
             // 
+            // txt_Categoria
+            // 
+            txt_Categoria.Location = new Point(508, 280);
+            txt_Categoria.Name = "txt_Categoria";
+            txt_Categoria.Size = new Size(220, 36);
+            txt_Categoria.TabIndex = 74;
+            // 
             // Frm_Categoria
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
+            ControlBox = false;
+            Controls.Add(txt_Categoria);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(button1);
+            Controls.Add(btn_Cancelar);
             Controls.Add(btn_Eliminar_Producto);
             Controls.Add(btn_Editar_Producto);
-            Controls.Add(btn_Agregar_Producto);
+            Controls.Add(btn_Agregar_Categoria);
             Controls.Add(dgv_Categoria);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
             Controls.Add(label4);
             Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -227,9 +229,10 @@
             MinimizeBox = false;
             Name = "Frm_Categoria";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Frm_Categoria";
+            Load += Frm_Categoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Categoria).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -237,18 +240,18 @@
         }
 
         #endregion
-        private ComboBox comboBox2;
         private Label label4;
         private Label label3;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private DataGridView dgv_Categoria;
-        private Button button1;
+        private Button btn_Cancelar;
         private Button btn_Eliminar_Producto;
         private Button btn_Editar_Producto;
-        private Button btn_Agregar_Producto;
+        private Button btn_Agregar_Categoria;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private Button btn_Volver;
+        private PictureBox pictureBox1;
+        private TextBox txt_Categoria;
     }
 }

@@ -3,23 +3,29 @@ using Microsoft.Data.SqlClient;
 
 namespace Capa_Negocios
 {
-    public class CN_Login
+    public class CN_Login : CN_Base
     {
-        private CD_Conexion conexion = new CD_Conexion();
+    
         public bool ValidarUsuario(string usuario, string contraseña)
         {
-            SqlConnection conn = conexion.AbrirConexion(); //TODO Esto Abre la conexión con el método
+            //TODO: Abrimos la conexión a la base de datos usando el método heredado
+            SqlConnection Conn = AbrirConexion();
 
-            string query = "SELECT COUNT(*) FROM Login WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
-            SqlCommand cmd = new SqlCommand(query, conn);
+            //TODO: Preparamos la consulta SQL para verificar si el usuario y contraseña existen
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Login WHERE Usuario = @Usuario AND Contraseña = @Contraseña", Conn);
+
+            //TODO: Asignamos los valores de entrada a los parámetros del comando
             cmd.Parameters.AddWithValue("@Usuario", usuario);
             cmd.Parameters.AddWithValue("@Contraseña", contraseña);
 
-            int count = (int)cmd.ExecuteScalar(); //TODO Esto de aquí Ejecuta la consulta
+            //TODO: Ejecutamos la consulta y obtenemos el número de coincidencias
+            int count = (int)cmd.ExecuteScalar();
 
-            conexion.CerrarConexion(); //TODO Esto Cierra la conexión con tu método
+            //TODO: Cerramos la conexión a la base de datos
+            CerrarConexion();
 
-            return count > 0; //TODO Si encuentra coincidencias, retorna true
+            //TODO: Retorna true si hay coincidencias (usuario válido), de lo contrario, false
+            return count > 0;
         }
     }
 }

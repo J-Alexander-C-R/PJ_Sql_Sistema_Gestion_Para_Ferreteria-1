@@ -12,6 +12,7 @@ namespace Capa_Presentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
+
         }
     }
 }

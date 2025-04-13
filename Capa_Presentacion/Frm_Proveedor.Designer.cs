@@ -31,24 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Proveedor));
             label14 = new Label();
             dgv_Proveedor = new DataGridView();
-            comboBox2 = new ComboBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            txt_Email = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
             label13 = new Label();
-            textBox1 = new TextBox();
+            txt_Empresa = new TextBox();
             lbl_Usuario = new Label();
             panel1 = new Panel();
-            btn_Volver = new Button();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
-            button1 = new Button();
+            btn_Cancelar = new Button();
             btn_Eliminar_Producto = new Button();
             btn_Editar_Producto = new Button();
-            btn_Agregar_Producto = new Button();
+            btn_Agregar_Proveedor = new Button();
+            txt_Direccion = new TextBox();
+            txt_Telefono = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgv_Proveedor).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,15 +76,7 @@
             dgv_Proveedor.RowHeadersWidth = 62;
             dgv_Proveedor.Size = new Size(1022, 225);
             dgv_Proveedor.TabIndex = 45;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(485, 353);
-            comboBox2.Margin = new Padding(4, 2, 4, 2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(220, 36);
-            comboBox2.TabIndex = 41;
+            dgv_Proveedor.CellContentClick += dgv_Proveedor_CellContentClick;
             // 
             // label4
             // 
@@ -96,13 +89,13 @@
             label4.TabIndex = 39;
             label4.Text = "Direccion";
             // 
-            // textBox3
+            // txt_Email
             // 
-            textBox3.Location = new Point(880, 249);
-            textBox3.Margin = new Padding(4, 2, 4, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(220, 36);
-            textBox3.TabIndex = 37;
+            txt_Email.Location = new Point(880, 249);
+            txt_Email.Margin = new Padding(4, 2, 4, 2);
+            txt_Email.Name = "txt_Email";
+            txt_Email.Size = new Size(220, 36);
+            txt_Email.TabIndex = 37;
             // 
             // label5
             // 
@@ -115,14 +108,6 @@
             label5.TabIndex = 36;
             label5.Text = "Email";
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(485, 249);
-            textBox2.Margin = new Padding(4, 2, 4, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(220, 36);
-            textBox2.TabIndex = 35;
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -134,13 +119,13 @@
             label13.TabIndex = 34;
             label13.Text = "Telefono";
             // 
-            // textBox1
+            // txt_Empresa
             // 
-            textBox1.Location = new Point(95, 249);
-            textBox1.Margin = new Padding(4, 2, 4, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 36);
-            textBox1.TabIndex = 33;
+            txt_Empresa.Location = new Point(95, 249);
+            txt_Empresa.Margin = new Padding(4, 2, 4, 2);
+            txt_Empresa.Name = "txt_Empresa";
+            txt_Empresa.Size = new Size(220, 36);
+            txt_Empresa.TabIndex = 33;
             // 
             // lbl_Usuario
             // 
@@ -156,7 +141,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(btn_Volver);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1226, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
@@ -164,21 +149,16 @@
             panel1.Size = new Size(254, 760);
             panel1.TabIndex = 47;
             // 
-            // btn_Volver
+            // pictureBox1
             // 
-            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
-            btn_Volver.FlatAppearance.BorderSize = 0;
-            btn_Volver.FlatStyle = FlatStyle.Flat;
-            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Volver.ForeColor = Color.White;
-            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
-            btn_Volver.Location = new Point(36, 286);
-            btn_Volver.Margin = new Padding(4, 2, 4, 2);
-            btn_Volver.Name = "btn_Volver";
-            btn_Volver.Size = new Size(167, 103);
-            btn_Volver.TabIndex = 60;
-            btn_Volver.UseVisualStyleBackColor = false;
-            btn_Volver.Click += btn_Volver_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(35, 290);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 53;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -203,20 +183,21 @@
             label1.TabIndex = 2;
             label1.Text = "Gestion de Ferreterias";
             // 
-            // button1
+            // btn_Cancelar
             // 
-            button1.BackColor = Color.FromArgb(198, 65, 66);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(418, 432);
-            button1.Margin = new Padding(4, 2, 4, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(164, 41);
-            button1.TabIndex = 52;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
+            btn_Cancelar.BackColor = Color.FromArgb(198, 65, 66);
+            btn_Cancelar.FlatAppearance.BorderSize = 0;
+            btn_Cancelar.FlatStyle = FlatStyle.Flat;
+            btn_Cancelar.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cancelar.ForeColor = Color.White;
+            btn_Cancelar.Location = new Point(418, 432);
+            btn_Cancelar.Margin = new Padding(4, 2, 4, 2);
+            btn_Cancelar.Name = "btn_Cancelar";
+            btn_Cancelar.Size = new Size(164, 41);
+            btn_Cancelar.TabIndex = 52;
+            btn_Cancelar.Text = "Cancelar";
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += btn_Cancelar_Click;
             // 
             // btn_Eliminar_Producto
             // 
@@ -232,6 +213,7 @@
             btn_Eliminar_Producto.TabIndex = 51;
             btn_Eliminar_Producto.Text = "Eliminar";
             btn_Eliminar_Producto.UseVisualStyleBackColor = false;
+            btn_Eliminar_Producto.Click += btn_Eliminar_Producto_Click;
             // 
             // btn_Editar_Producto
             // 
@@ -247,21 +229,39 @@
             btn_Editar_Producto.TabIndex = 50;
             btn_Editar_Producto.Text = "Editar";
             btn_Editar_Producto.UseVisualStyleBackColor = false;
+            btn_Editar_Producto.Click += btn_Editar_Producto_Click;
             // 
-            // btn_Agregar_Producto
+            // btn_Agregar_Proveedor
             // 
-            btn_Agregar_Producto.BackColor = Color.FromArgb(19, 26, 97);
-            btn_Agregar_Producto.FlatAppearance.BorderSize = 0;
-            btn_Agregar_Producto.FlatStyle = FlatStyle.Flat;
-            btn_Agregar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Agregar_Producto.ForeColor = Color.White;
-            btn_Agregar_Producto.Location = new Point(193, 432);
-            btn_Agregar_Producto.Margin = new Padding(4, 2, 4, 2);
-            btn_Agregar_Producto.Name = "btn_Agregar_Producto";
-            btn_Agregar_Producto.Size = new Size(164, 41);
-            btn_Agregar_Producto.TabIndex = 49;
-            btn_Agregar_Producto.Text = "Agregar";
-            btn_Agregar_Producto.UseVisualStyleBackColor = false;
+            btn_Agregar_Proveedor.BackColor = Color.FromArgb(19, 26, 97);
+            btn_Agregar_Proveedor.FlatAppearance.BorderSize = 0;
+            btn_Agregar_Proveedor.FlatStyle = FlatStyle.Flat;
+            btn_Agregar_Proveedor.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Agregar_Proveedor.ForeColor = Color.White;
+            btn_Agregar_Proveedor.Location = new Point(193, 432);
+            btn_Agregar_Proveedor.Margin = new Padding(4, 2, 4, 2);
+            btn_Agregar_Proveedor.Name = "btn_Agregar_Proveedor";
+            btn_Agregar_Proveedor.Size = new Size(164, 41);
+            btn_Agregar_Proveedor.TabIndex = 49;
+            btn_Agregar_Proveedor.Text = "Agregar";
+            btn_Agregar_Proveedor.UseVisualStyleBackColor = false;
+            btn_Agregar_Proveedor.Click += btn_Agregar_Proveedor_Click;
+            // 
+            // txt_Direccion
+            // 
+            txt_Direccion.Location = new Point(485, 354);
+            txt_Direccion.Margin = new Padding(4, 2, 4, 2);
+            txt_Direccion.Name = "txt_Direccion";
+            txt_Direccion.Size = new Size(220, 36);
+            txt_Direccion.TabIndex = 53;
+            // 
+            // txt_Telefono
+            // 
+            txt_Telefono.Location = new Point(485, 233);
+            txt_Telefono.Margin = new Padding(4, 2, 4, 2);
+            txt_Telefono.Name = "txt_Telefono";
+            txt_Telefono.Size = new Size(220, 36);
+            txt_Telefono.TabIndex = 55;
             // 
             // Frm_Proveedor
             // 
@@ -269,21 +269,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
-            Controls.Add(button1);
+            ControlBox = false;
+            Controls.Add(txt_Telefono);
+            Controls.Add(txt_Direccion);
+            Controls.Add(btn_Cancelar);
             Controls.Add(btn_Eliminar_Producto);
             Controls.Add(btn_Editar_Producto);
-            Controls.Add(btn_Agregar_Producto);
+            Controls.Add(btn_Agregar_Proveedor);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label14);
             Controls.Add(dgv_Proveedor);
-            Controls.Add(comboBox2);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(txt_Email);
             Controls.Add(label5);
-            Controls.Add(textBox2);
             Controls.Add(label13);
-            Controls.Add(textBox1);
+            Controls.Add(txt_Empresa);
             Controls.Add(lbl_Usuario);
             Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -292,9 +293,10 @@
             MinimizeBox = false;
             Name = "Frm_Proveedor";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Frm_Proveedor";
+            Load += Frm_Proveedor_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Proveedor).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -306,19 +308,20 @@
         private DataGridView dgv_Proveedor;
         private ComboBox comboBox2;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox txt_Email;
         private Label label5;
-        private TextBox textBox2;
         private Label label13;
-        private TextBox textBox1;
+        private TextBox txt_Empresa;
         private Label lbl_Usuario;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private Button button1;
+        private Button btn_Cancelar;
         private Button btn_Eliminar_Producto;
         private Button btn_Editar_Producto;
-        private Button btn_Agregar_Producto;
-        private Button btn_Volver;
+        private Button btn_Agregar_Proveedor;
+        private PictureBox pictureBox1;
+        private TextBox txt_Direccion;
+        private TextBox txt_Telefono;
     }
 }

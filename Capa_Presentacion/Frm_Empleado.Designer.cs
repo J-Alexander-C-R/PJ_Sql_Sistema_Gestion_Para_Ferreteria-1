@@ -31,28 +31,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleado));
             label4 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txt_Telefono = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            txt_Apellido = new TextBox();
             label13 = new Label();
-            textBox1 = new TextBox();
+            txt_Nombre = new TextBox();
             lbl_Usuario = new Label();
             dgv_Empleado = new DataGridView();
-            textBox4 = new TextBox();
+            txt_Email = new TextBox();
             label15 = new Label();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button1 = new Button();
+            txt_Cedula = new TextBox();
+            btn_Cancelar = new Button();
             btn_Eliminar_Producto = new Button();
             btn_Editar_Producto = new Button();
-            btn_Agregar_Producto = new Button();
+            btn_Agregar_Empleado = new Button();
             panel1 = new Panel();
-            btn_Volver = new Button();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
             label14 = new Label();
+            lbl_Direccion = new Label();
+            txt_Direccion = new TextBox();
+            Cmb_Cargo = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgv_Empleado).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +63,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(880, 312);
+            label4.Location = new Point(675, 312);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(77, 28);
@@ -78,51 +81,51 @@
             label3.TabIndex = 38;
             label3.Text = "Cedula";
             // 
-            // textBox3
+            // txt_Telefono
             // 
-            textBox3.Location = new Point(880, 253);
-            textBox3.Margin = new Padding(4, 3, 4, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(220, 36);
-            textBox3.TabIndex = 37;
+            txt_Telefono.Location = new Point(675, 253);
+            txt_Telefono.Margin = new Padding(4, 3, 4, 3);
+            txt_Telefono.Name = "txt_Telefono";
+            txt_Telefono.Size = new Size(220, 36);
+            txt_Telefono.TabIndex = 37;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(880, 207);
+            label5.Location = new Point(675, 207);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(103, 28);
             label5.TabIndex = 36;
             label5.Text = "Telefono";
             // 
-            // textBox2
+            // txt_Apellido
             // 
-            textBox2.Location = new Point(485, 253);
-            textBox2.Margin = new Padding(4, 3, 4, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(220, 36);
-            textBox2.TabIndex = 35;
+            txt_Apellido.Location = new Point(387, 253);
+            txt_Apellido.Margin = new Padding(4, 3, 4, 3);
+            txt_Apellido.Name = "txt_Apellido";
+            txt_Apellido.Size = new Size(220, 36);
+            txt_Apellido.TabIndex = 35;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label13.Location = new Point(485, 207);
+            label13.Location = new Point(387, 207);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(101, 28);
             label13.TabIndex = 34;
             label13.Text = "Apellido";
             // 
-            // textBox1
+            // txt_Nombre
             // 
-            textBox1.Location = new Point(95, 253);
-            textBox1.Margin = new Padding(4, 3, 4, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 36);
-            textBox1.TabIndex = 33;
+            txt_Nombre.Location = new Point(95, 253);
+            txt_Nombre.Margin = new Padding(4, 3, 4, 3);
+            txt_Nombre.Name = "txt_Nombre";
+            txt_Nombre.Size = new Size(220, 36);
+            txt_Nombre.TabIndex = 33;
             // 
             // lbl_Usuario
             // 
@@ -145,56 +148,50 @@
             dgv_Empleado.RowHeadersWidth = 62;
             dgv_Empleado.Size = new Size(1022, 225);
             dgv_Empleado.TabIndex = 46;
+            dgv_Empleado.CellContentClick += dgv_Empleado_CellContentClick;
             // 
-            // textBox4
+            // txt_Email
             // 
-            textBox4.Location = new Point(485, 358);
-            textBox4.Margin = new Padding(4, 3, 4, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(220, 36);
-            textBox4.TabIndex = 48;
+            txt_Email.Location = new Point(387, 358);
+            txt_Email.Margin = new Padding(4, 3, 4, 3);
+            txt_Email.Name = "txt_Email";
+            txt_Email.Size = new Size(220, 36);
+            txt_Email.TabIndex = 48;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label15.Location = new Point(485, 312);
+            label15.Location = new Point(387, 312);
             label15.Margin = new Padding(4, 0, 4, 0);
             label15.Name = "label15";
             label15.Size = new Size(74, 28);
             label15.TabIndex = 47;
             label15.Text = "Email";
             // 
-            // textBox5
+            // txt_Cedula
             // 
-            textBox5.Location = new Point(95, 358);
-            textBox5.Margin = new Padding(4, 3, 4, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(220, 36);
-            textBox5.TabIndex = 49;
+            txt_Cedula.Location = new Point(95, 358);
+            txt_Cedula.Margin = new Padding(4, 3, 4, 3);
+            txt_Cedula.Name = "txt_Cedula";
+            txt_Cedula.Size = new Size(220, 36);
+            txt_Cedula.TabIndex = 49;
             // 
-            // textBox6
+            // btn_Cancelar
             // 
-            textBox6.Location = new Point(880, 358);
-            textBox6.Margin = new Padding(4, 3, 4, 3);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(220, 36);
-            textBox6.TabIndex = 50;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(198, 65, 66);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(414, 445);
-            button1.Margin = new Padding(4, 2, 4, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(164, 41);
-            button1.TabIndex = 54;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
+            btn_Cancelar.BackColor = Color.FromArgb(198, 65, 66);
+            btn_Cancelar.FlatAppearance.BorderSize = 0;
+            btn_Cancelar.FlatStyle = FlatStyle.Flat;
+            btn_Cancelar.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Cancelar.ForeColor = Color.White;
+            btn_Cancelar.Location = new Point(414, 445);
+            btn_Cancelar.Margin = new Padding(4, 2, 4, 2);
+            btn_Cancelar.Name = "btn_Cancelar";
+            btn_Cancelar.Size = new Size(164, 41);
+            btn_Cancelar.TabIndex = 54;
+            btn_Cancelar.Text = "Cancelar";
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += btn_Cancelar_Click;
             // 
             // btn_Eliminar_Producto
             // 
@@ -210,6 +207,7 @@
             btn_Eliminar_Producto.TabIndex = 53;
             btn_Eliminar_Producto.Text = "Eliminar";
             btn_Eliminar_Producto.UseVisualStyleBackColor = false;
+            btn_Eliminar_Producto.Click += btn_Eliminar_Empleado_Click;
             // 
             // btn_Editar_Producto
             // 
@@ -225,26 +223,28 @@
             btn_Editar_Producto.TabIndex = 52;
             btn_Editar_Producto.Text = "Editar";
             btn_Editar_Producto.UseVisualStyleBackColor = false;
+            btn_Editar_Producto.Click += btn_Editar_Empleado_Click;
             // 
-            // btn_Agregar_Producto
+            // btn_Agregar_Empleado
             // 
-            btn_Agregar_Producto.BackColor = Color.FromArgb(19, 26, 97);
-            btn_Agregar_Producto.FlatAppearance.BorderSize = 0;
-            btn_Agregar_Producto.FlatStyle = FlatStyle.Flat;
-            btn_Agregar_Producto.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Agregar_Producto.ForeColor = Color.White;
-            btn_Agregar_Producto.Location = new Point(189, 445);
-            btn_Agregar_Producto.Margin = new Padding(4, 2, 4, 2);
-            btn_Agregar_Producto.Name = "btn_Agregar_Producto";
-            btn_Agregar_Producto.Size = new Size(164, 41);
-            btn_Agregar_Producto.TabIndex = 51;
-            btn_Agregar_Producto.Text = "Agregar";
-            btn_Agregar_Producto.UseVisualStyleBackColor = false;
+            btn_Agregar_Empleado.BackColor = Color.FromArgb(19, 26, 97);
+            btn_Agregar_Empleado.FlatAppearance.BorderSize = 0;
+            btn_Agregar_Empleado.FlatStyle = FlatStyle.Flat;
+            btn_Agregar_Empleado.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_Agregar_Empleado.ForeColor = Color.White;
+            btn_Agregar_Empleado.Location = new Point(189, 445);
+            btn_Agregar_Empleado.Margin = new Padding(4, 2, 4, 2);
+            btn_Agregar_Empleado.Name = "btn_Agregar_Empleado";
+            btn_Agregar_Empleado.Size = new Size(164, 41);
+            btn_Agregar_Empleado.TabIndex = 51;
+            btn_Agregar_Empleado.Text = "Agregar";
+            btn_Agregar_Empleado.UseVisualStyleBackColor = false;
+            btn_Agregar_Empleado.Click += btn_Agregar_Empleado_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(42, 28, 109);
-            panel1.Controls.Add(btn_Volver);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1226, 0);
             panel1.Margin = new Padding(4, 2, 4, 2);
@@ -252,20 +252,16 @@
             panel1.Size = new Size(254, 760);
             panel1.TabIndex = 55;
             // 
-            // btn_Volver
+            // pictureBox1
             // 
-            btn_Volver.BackColor = Color.FromArgb(42, 28, 109);
-            btn_Volver.FlatAppearance.BorderSize = 0;
-            btn_Volver.FlatStyle = FlatStyle.Flat;
-            btn_Volver.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Volver.ForeColor = Color.White;
-            btn_Volver.Image = (Image)resources.GetObject("btn_Volver.Image");
-            btn_Volver.Location = new Point(40, 276);
-            btn_Volver.Margin = new Padding(4, 2, 4, 2);
-            btn_Volver.Name = "btn_Volver";
-            btn_Volver.Size = new Size(167, 103);
-            btn_Volver.TabIndex = 60;
-            btn_Volver.UseVisualStyleBackColor = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(39, 312);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 150);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 58;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -302,31 +298,63 @@
             label14.TabIndex = 57;
             label14.Text = " Empleados";
             // 
+            // lbl_Direccion
+            // 
+            lbl_Direccion.AutoSize = true;
+            lbl_Direccion.Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbl_Direccion.Location = new Point(960, 207);
+            lbl_Direccion.Margin = new Padding(4, 0, 4, 0);
+            lbl_Direccion.Name = "lbl_Direccion";
+            lbl_Direccion.Size = new Size(114, 28);
+            lbl_Direccion.TabIndex = 58;
+            lbl_Direccion.Text = "Direccion\r\n";
+            // 
+            // txt_Direccion
+            // 
+            txt_Direccion.Location = new Point(960, 253);
+            txt_Direccion.Margin = new Padding(4, 3, 4, 3);
+            txt_Direccion.Name = "txt_Direccion";
+            txt_Direccion.Size = new Size(220, 36);
+            txt_Direccion.TabIndex = 59;
+            // 
+            // Cmb_Cargo
+            // 
+            Cmb_Cargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            Cmb_Cargo.FormattingEnabled = true;
+            Cmb_Cargo.Items.AddRange(new object[] { "Gerente", "Supervisor", "Almacen", "Caja", "Servicio", "Transporte", "Despachador" });
+            Cmb_Cargo.Location = new Point(675, 358);
+            Cmb_Cargo.Name = "Cmb_Cargo";
+            Cmb_Cargo.Size = new Size(220, 36);
+            Cmb_Cargo.TabIndex = 60;
+            // 
             // Frm_Empleado
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1480, 760);
+            ControlBox = false;
+            Controls.Add(Cmb_Cargo);
+            Controls.Add(txt_Direccion);
+            Controls.Add(lbl_Direccion);
             Controls.Add(label14);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(button1);
+            Controls.Add(btn_Cancelar);
             Controls.Add(btn_Eliminar_Producto);
             Controls.Add(btn_Editar_Producto);
-            Controls.Add(btn_Agregar_Producto);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(btn_Agregar_Empleado);
+            Controls.Add(txt_Cedula);
+            Controls.Add(txt_Email);
             Controls.Add(label15);
             Controls.Add(dgv_Empleado);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txt_Telefono);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txt_Apellido);
             Controls.Add(label13);
-            Controls.Add(textBox1);
+            Controls.Add(txt_Nombre);
             Controls.Add(lbl_Usuario);
             Font = new Font("Cambria", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -335,8 +363,10 @@
             MinimizeBox = false;
             Name = "Frm_Empleado";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Frm_Empleado_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Empleado).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -346,25 +376,27 @@
         #endregion
         private Label label4;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txt_Telefono;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox txt_Apellido;
         private Label label13;
-        private TextBox textBox1;
+        private TextBox txt_Nombre;
         private Label lbl_Usuario;
         private DataGridView dgv_Empleado;
-        private TextBox textBox4;
+        private TextBox txt_Email;
         private Label label15;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private Button button1;
+        private TextBox txt_Cedula;
+        private Button btn_Cancelar;
         private Button btn_Eliminar_Producto;
         private Button btn_Editar_Producto;
-        private Button btn_Agregar_Producto;
+        private Button btn_Agregar_Empleado;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
         private Label label14;
-        private Button btn_Volver;
+        private PictureBox pictureBox1;
+        private Label lbl_Direccion;
+        private TextBox txt_Direccion;
+        private ComboBox Cmb_Cargo;
     }
 }
